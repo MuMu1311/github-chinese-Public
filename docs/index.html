@@ -5,24 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Chinese</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #111827; color: #f9fafb; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 48px 20px; }
-    .card { background: rgba(17,24,39,.82); border: 1px solid rgba(148,163,184,.18); border-radius: 20px; padding: 24px; }
-    a { color: #86efac; }
-    .muted { color: #9ca3af; }
+    :root { --bg: #111827; --surface: rgba(17,24,39,.82); --line: rgba(148,163,184,.18); --text: #f9fafb; --muted: #9ca3af; --accent: #86efac; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; color: var(--text); background: radial-gradient(circle at top right, rgba(34,197,94,.16), transparent 28%), linear-gradient(180deg, #020617 0%, var(--bg) 100%); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 48px; }
+    .hero { display: grid; gap: 18px; grid-template-columns: 1.4fr .6fr; align-items: start; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; box-shadow: 0 18px 40px rgba(2,6,23,.25); }
+    h1, h2, p { margin-top: 0; }
+    .muted { color: var(--muted); line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    .pillbar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill { padding: 10px 14px; border-radius: 999px; background: rgba(134,239,172,.10); border: 1px solid rgba(134,239,172,.16); color: var(--text); }
+    .pill.active { background: rgba(34,197,94,.22); border-color: rgba(34,197,94,.36); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+    .mini { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .mini strong { display: block; margin-bottom: 6px; }
+    ul { padding-left: 18px; line-height: 1.8; }
+    @media (max-width: 860px) { .hero, .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-      <h1>GitHub 中文化插件</h1>
-      <p class="muted">GitHub 汉化与用户脚本仓库，适合安装、调试和规则维护。</p>
-      <ul>
-        <li><a href="../SKILL.md">SKILL.md</a></li>
-        <li>Tampermonkey / Violentmonkey / Macaque</li>
-        <li>中文说明：适合 GitHub 界面汉化和本地调试</li>
-      </ul>
-      <p><a href="https://github.com/MuMu1311/github-chinese-Public">GitHub 仓库</a></p>
+    <div class="hero">
+      <div class="card">
+        <div class="pillbar">
+          <a class="pill" href="https://mumu1311.github.io/Awesome-AI-Pedia/">Awesome-AI-Pedia</a>
+          <a class="pill" href="https://mumu1311.github.io/skills/">skills</a>
+          <a class="pill active" href="./">github-chinese-Public</a>
+        </div>
+        <h1>GitHub 中文化插件</h1>
+        <p class="muted">GitHub 汉化与用户脚本仓库，适合安装、调试和规则维护。</p>
+        <ul>
+          <li><a href="../SKILL.md">SKILL.md</a>：skill 入口说明</li>
+          <li>Tampermonkey / Violentmonkey / Macaque</li>
+          <li>中文说明：适合 GitHub 界面汉化和本地调试</li>
+        </ul>
+        <p><a href="https://github.com/MuMu1311/github-chinese-Public">GitHub 仓库</a></p>
+      </div>
+      <div class="card">
+        <h2>导航</h2>
+        <div class="mini"><strong>浏览器类</strong><span class="muted">用户脚本、兼容性、权限配置</span></div>
+        <div class="mini" style="margin-top:12px;"><strong>使用方式</strong><span class="muted">先装脚本，再查权限，再看规则</span></div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="mini"><strong>安装源</strong><span class="muted">GitHub 开发版 / GreasyFork 稳定版</span></div>
+      <div class="mini"><strong>本地调试</strong><span class="muted">file:/// require 路径与本地访问权限</span></div>
+      <div class="mini"><strong>兼容性</strong><span class="muted">Chrome、Firefox、Safari、Android</span></div>
     </div>
   </div>
 </body>
