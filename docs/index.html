@@ -20,6 +20,8 @@
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
     .mini { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
     .mini strong { display: block; margin-bottom: 6px; }
+    .section { margin-top: 18px; }
+    .section h2 { margin-bottom: 10px; font-size: 1.2rem; }
     ul { padding-left: 18px; line-height: 1.8; }
     @media (max-width: 860px) { .hero, .grid { grid-template-columns: 1fr; } }
   </style>
@@ -52,6 +54,16 @@
       <div class="mini"><strong>安装源</strong><span class="muted">GitHub 开发版 / GreasyFork 稳定版</span></div>
       <div class="mini"><strong>本地调试</strong><span class="muted">file:/// require 路径与本地访问权限</span></div>
       <div class="mini"><strong>兼容性</strong><span class="muted">Chrome、Firefox、Safari、Android</span></div>
+    </div>
+
+    <div class="section card">
+      <h2>从 skill 中导入的要点</h2>
+      <ul>
+        <li>这是一个成熟的 GitHub 中文化用户脚本项目，重点在安装、兼容和规则维护。</li>
+        <li>开发版和稳定版分离：GitHub 源用于开发，GreasyFork 用于稳定分发。</li>
+        <li>本地调试依赖 `file:///` 路径、脚本管理器权限和浏览器的用户脚本开关。</li>
+        <li>排查时要同时确认浏览器类型、脚本源和页面刷新行为。</li>
+      </ul>
     </div>
   </div>
 </body>
